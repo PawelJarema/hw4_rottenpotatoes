@@ -1,0 +1,20 @@
+%h1 All Movies With Same Director
+
+%table#movies
+  %thead
+    %tr
+      %th{:class => @title_header}= link_to 'Movie Title', movies_path(:sort => 'title', :ratings => @selected_ratings), :id => 'title_header'
+      %th Director
+      %th Rating
+      %th Release Date
+      %th More Info
+  %tbody
+  - @movies.each do |movie|
+    %tr
+      %td= movie.title
+      %td= movie.director
+      %td= movie.rating
+      %td= movie.release_date
+      %td= link_to "More about #{movie.title}", movie_path(movie)
+
+= link_to 'Add new movie', new_movie_path

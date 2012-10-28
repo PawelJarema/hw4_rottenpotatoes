@@ -193,6 +193,10 @@ DEPENDENCIES
   launchy
   pg
   rails (= 3.1.0)
+  rspec
+  rspec-core
+  rspec-expectations
+  rspec-mocks
   rspec-rails
   ruby-debug19
   sass-rails (~> 3.1.0)
