@@ -11,7 +11,7 @@ describe MoviesController do
    it 'should call the method find_all_by_director in the movie model' do
      Movie.should_receive(:find_all_by_director).with('Riddley Scott').
        and_return(@fake_results)
-     get :find_movies_with_same_director #, @params.merge(:director => 'Riddley Scott')
+     get :find_movies_with_same_director, @params.merge(:director => 'Riddley Scott')
    end
 
    describe 'after model action' do
@@ -25,7 +25,7 @@ describe MoviesController do
      end
 
      it 'should store movie list in variable available to the view' do
-       assigns(:movies).should == @fake_results
+       assigns(:movies).should == @fake_results  # .should eq(expected_value)
      end
    end
  end
